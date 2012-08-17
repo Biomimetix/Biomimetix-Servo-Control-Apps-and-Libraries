@@ -157,10 +157,12 @@ void zoSmsPinsInit(void)
 	//PB3: MOSI		: SPI Master out slave in
 	//PB4: MISO		: SPI Master in slave out
 	//PB5: SCK		: SPI clock
-	
-	DDRB = 0x04;
-	PORTB |= 0x3E;	
-
+    //PB6: OSC1
+    //PB7: OSC2
+	DDRB = 0x04;    //0000.0011 PB0 -1 Set as Output
+	PORTB |= 0x3E;	//0011.1110  >>>  PORTB = PORTB | 0x3E
+                                      
+    
 	//PORTC pin assignments_______________________________________________________________
 	//PC0: AIN1		: Analog input 1
 	//PC1: AIN2		: Analog input 2
